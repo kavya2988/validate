@@ -1,0 +1,64 @@
+
+<style>
+    .nameerror,.emailerror,.numbererror{
+        display: none;
+    }
+</style>
+
+<div>
+   Name: <input type="text" id="name">
+    <span class="nameerror">name must contain letters</span><br>
+
+     Email:<input type="email" id="email">
+      <span class="emailerror">write in correct format</span><br>
+
+    
+      Number<input type="number" id="number">
+       <span class="numbererror">number must be in digits</span><br>
+       <input type="submit" id="button">
+    
+
+</div>
+
+<script>
+    let name=document.getElementById("name")
+    let email=document.getElementById("email")
+    let number=document.getElementById("number")
+    let button=document.getElementById("button")
+    button.addEventListener("click",function(){
+let nameregex=/^[a-zA-Z]+$/
+    let emailregex=/^[a-zA-Z0-9]+@gmail\.com$/
+    let numberregex=/^\d{10}$/
+
+    if(nameregex.test(name.value)==false)
+{
+document.querySelector(".nameerror").style.display="inline"
+}
+
+else{
+document.querySelector(".nameerror").style.display="none"
+}
+  
+ if(emailregex.test(email.value)==false)
+{
+document.querySelector(".emailerror").style.display="inline"
+}
+
+else{
+document.querySelector(".emailerror").style.display="none"
+}
+   if(numberregex.test(number.value)==false)
+{
+document.querySelector(".numbererror").style.display="inline"
+}
+
+else{
+document.querySelector(".numbererror").style.display="none"
+}
+  
+
+})
+
+    
+
+</script>
